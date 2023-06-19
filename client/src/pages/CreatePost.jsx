@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { preview } from '../assets';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
+import {BASE_URL} from '../helper.js'
 
 
 const CreatePost = () => {
@@ -18,8 +19,31 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = () => {
+  const generateImage = async() => {
+    if (form.prompt) {
+      try {
+        setGeneratingImg(true);
+        const response = await fetch(`${BASE_URL}/api/v1/imageCraft`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: form.prompt,
+          }),
+        });
 
+        const data = await response.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch (err) {
+        alert(err);
+        console.log(err.message)
+      } finally {
+        setGeneratingImg(false);
+      }
+    } else {
+      alert('Please provide proper prompt');
+    }
   }
   const handleSubmit = () => {
 
