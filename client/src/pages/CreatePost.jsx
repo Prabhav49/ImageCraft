@@ -6,7 +6,6 @@ import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
 import {BASE_URL} from '../helper.js'
 
-
 const CreatePost = () => {
 
   const navigate = useNavigate();
@@ -37,8 +36,9 @@ const CreatePost = () => {
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
       } catch (err) {
         alert(err);
-        console.log(err.message)
-      } finally {
+        console.log(err.message);
+      } 
+      finally {
         setGeneratingImg(false);
       }
     } else {

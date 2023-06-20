@@ -23,7 +23,7 @@ const startServer = async() =>{
 
 
     try {
-        connectDB("mongodb+srv://imageCraftUser:imagecraft@cluster0.lredb5n.mongodb.net/?retryWrites=true&w=majority")
+        connectDB(process.env.REACT_APP_MONGODB_URL)
         app.listen(5000, () => console.log('Server has started on port http://localhost:5000'))
 
     } catch (error) {
