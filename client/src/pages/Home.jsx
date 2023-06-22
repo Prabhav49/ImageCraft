@@ -47,7 +47,7 @@ const Home = () => {
     }, []);
 
     return (
-        <section className="max-w-7xl mx-auto text-[#de5759]">
+        <section className="max-w-7xl mx-auto text-[#601818]">
             <div>
                 <h1 className="font-extrabold  text-[32px]">The Community Showcase</h1>
 
