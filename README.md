@@ -28,7 +28,7 @@ https://image-craft.netlify.app/
 
 
 ## Technology Stack:
-**"Post Now"** is developed using the MERN stack, which includes:
+**ImageCraft** is developed using the MERN stack, which includes:
 
 - **MongoDB:** The database used to store user information, posts, and other data.
 - **Express.js:** The web framework used to build the backend server.
