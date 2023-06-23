@@ -7,14 +7,14 @@ import { Home, CreatePost } from './pages';
 const App = () => {
   return (
     <BrowserRouter>
-      <header className="w-full flex justify-between items-center  bg-[#90742b] sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
+      <header className="w-full flex justify-between items-center  bg-[#f5efb5] sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
 
         <Link to="/">
           <img src={logo} alt='logo' className='w-28 object-contain'/>
         </Link>
         
 
-        <Link to="/create-post" className="font-inter font-medium bg-[#601818] text-white px-4 py-2 rounded-md hover:bg-[#fdfadb] hover:text-[#000409] ">Create</Link>
+        <Link to="/create-post" className="font-inter font-medium bg-[#601818] text-white px-4 py-2 rounded-md hover:bg-[#90742b] hover:text-white ">Create</Link>
       </header>
       
       <main className="sm:p-8 px-4 py-8 w-full bg-[#fdfadb] min-h-[calc(100vh-73px)]">
